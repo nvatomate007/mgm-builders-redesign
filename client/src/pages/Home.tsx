@@ -1,5 +1,5 @@
 /*
-Design philosophy: Cyber-Industrial Utility Minimalism. Preserve the supplied DougABomb logo as the flagship asset, use restrained cyan/red utility accents, and keep every section focused on fast contractor lead routing into NGauge.
+Design philosophy: Cyber-Industrial Utility Minimalism. Preserve the supplied DougABomb logo as the flagship asset, use restrained cyan/red utility accents, and keep every section focused on helping customers choose the right Doug Oliver company.
 */
 import { useMemo, useState } from "react";
 
@@ -10,32 +10,46 @@ const cardTexture = "https://d2xsxph8kpxj0f.cloudfront.net/94907206/kz5YP7UVmQ8a
 
 const serviceRoutes = [
   {
-    id: "development",
-    label: "Land, development, or site work",
-    route: "Doug Oliver Development",
-    tag: "DOD_SITE_DEVELOPMENT",
-    note: "Best for development planning, land improvement, site prep, and contractor coordination.",
+    id: "roofing",
+    label: "Roofing Help",
+    copy: "Leaks, storm damage, aging roofs, inspections, or full replacement.",
+    cta: "Get Roofing Help",
+    path: "Doug Oliver Development",
   },
   {
-    id: "building",
-    label: "Build, remodel, or construction project",
-    route: "MGM Builders",
-    tag: "MGM_BUILD_REMODEL",
-    note: "Best for residential or commercial construction conversations that need builder follow-up.",
+    id: "exterior",
+    label: "Exterior Upgrades",
+    copy: "Siding, windows, doors, and builder-led exterior improvements.",
+    cta: "Explore Exterior Upgrades",
+    path: "MGM Builders",
   },
   {
-    id: "debris",
-    label: "Dumpster, junk, or debris removal",
-    route: "TrashMax",
-    tag: "TRASHMAX_DEBRIS",
-    note: "Best for roll-off dumpsters, cleanup, hauling, and debris removal requests.",
+    id: "remodeling",
+    label: "Remodeling / Additions",
+    copy: "Improve layout, function, and value with owner-managed construction work.",
+    cta: "Talk Through the Project",
+    path: "MGM Builders",
   },
   {
-    id: "unknown",
-    label: "Not sure yet — route me",
-    route: "DougABomb Intake",
-    tag: "DAB_ROUTING_NEEDED",
-    note: "Best when the customer knows the problem but needs help choosing the right company.",
+    id: "savings",
+    label: "Property Cost Savings",
+    copy: "Waste/recycling invoice audits, hauler contract review, and savings analysis.",
+    cta: "Check My Waste Savings",
+    path: "TrashMax",
+  },
+  {
+    id: "commercial",
+    label: "Commercial / Multi-Property Help",
+    copy: "Support for larger scopes, multiple properties, roofs, vendors, or service contracts.",
+    cta: "Route My Portfolio",
+    path: "DougABomb Concierge",
+  },
+  {
+    id: "partner",
+    label: "Partner With Doug",
+    copy: "Referral partner, investor, manager, operator, or contractor connection.",
+    cta: "Connect With Doug",
+    path: "Doug Oliver",
   },
 ];
 
@@ -43,44 +57,47 @@ const companies = [
   {
     name: "Doug Oliver Development",
     href: "https://dougoliverdevelopment.com/",
-    focus: "Development, site preparation, land improvement, and project coordination.",
-    cta: "Visit development site",
-    tag: "Development",
+    focus: "Roofing repair, roof replacement, inspections, and contractor routing for Central Florida homeowners and commercial property owners.",
+    cta: "Visit Doug Oliver Development",
+    tag: "Roofing",
   },
   {
     name: "MGM Builders",
     href: "https://mgmfla.com/",
-    focus: "Construction, building projects, remodeling, and contractor-led execution.",
-    cta: "Visit builder site",
+    focus: "Owner-managed roofing, siding, windows, doors, remodeling, and additions from a licensed Orlando builder.",
+    cta: "Visit MGM Builders",
     tag: "Build",
   },
   {
     name: "TrashMax",
     href: "https://mytrashmax.com/",
-    focus: "Dumpsters, junk removal, construction debris, and cleanup support.",
-    cta: "Visit cleanup site",
-    tag: "Cleanup",
+    focus: "Waste and recycling cost-reduction consulting for businesses, property managers, commercial properties, and multi-location operators.",
+    cta: "Explore TrashMax Savings",
+    tag: "Savings",
   },
 ];
 
-const ctaRows = [
-  ["Hero primary", "Tell Doug what you need", "Scrolls to NGauge intake with source=dougabomb_home_hero"],
-  ["Hero call", "Call now", "Uses tracking-ready tel link with source=dougabomb_mobile_or_desktop_call"],
-  ["Service cards", "Select route", "Preselects service path, route owner, and NGauge tag"],
-  ["Company cards", "Visit existing site", "Links out to current company sites; no duplicate rebuild"],
-  ["Final form", "Send request", "Embeddable NGauge form destination or GHL-native form"],
+const trustItems = [
+  ["20+ Years", "Experience"],
+  ["$250M+", "Roofing Project Involvement"],
+  ["3 Brands", "One Starting Point"],
+  ["Central Florida", "& Tampa Region"],
 ];
 
 export default function Home() {
-  const [selectedRoute, setSelectedRoute] = useState(serviceRoutes[3]);
+  const [selectedRoute, setSelectedRoute] = useState(serviceRoutes[0]);
 
   const formTitle = useMemo(() => {
-    if (selectedRoute.id === "unknown") return "Tell Doug what you need";
-    return `Start with ${selectedRoute.route}`;
+    if (selectedRoute.id === "partner") return "Connect With Doug";
+    return "Tell Doug What You Need";
   }, [selectedRoute]);
 
-  const scrollToForm = () => {
-    document.getElementById("ngauge-intake")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const scrollToCompanies = () => {
+    document.getElementById("companies")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -91,17 +108,17 @@ export default function Home() {
             <img src={logoUrl} alt="DougABomb" className="h-12 w-12 rounded-xl object-cover ring-1 ring-cyan-300/30" />
             <div className="leading-tight">
               <p className="font-display text-lg font-bold tracking-[0.18em] text-white">DOUGABOMB</p>
-              <p className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">Contractor Routing Hub</p>
+              <p className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">Doug Oliver Brand Hub</p>
             </div>
           </a>
           <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-200 md:flex">
-            <a href="#route" className="hover:text-cyan-200">Services</a>
+            <a href="#services" className="hover:text-cyan-200">Services</a>
             <a href="#companies" className="hover:text-cyan-200">Companies</a>
-            <a href="#ngauge-intake" className="hover:text-cyan-200">NGauge Intake</a>
+            <a href="#about" className="hover:text-cyan-200">About Doug</a>
+            <a href="#contact" className="hover:text-cyan-200">Contact</a>
           </nav>
           <div className="hidden items-center gap-3 md:flex">
-            <a href="tel:+10000000000" className="rounded-md border border-cyan-300/35 px-4 py-2 text-sm font-bold text-cyan-100 transition hover:bg-cyan-300/10">Call Tracking Ready</a>
-            <button onClick={scrollToForm} className="rounded-md bg-cyan-300 px-4 py-2 text-sm font-black text-slate-950 shadow-[0_0_22px_rgba(103,232,249,0.25)] transition hover:bg-cyan-200">Start Request</button>
+            <button onClick={scrollToContact} className="rounded-md bg-cyan-300 px-4 py-2 text-sm font-black text-slate-950 shadow-[0_0_22px_rgba(103,232,249,0.25)] transition hover:bg-cyan-200">Tell Doug What You Need</button>
           </div>
         </div>
       </header>
@@ -111,21 +128,16 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(34,211,238,0.18),transparent_36%),linear-gradient(90deg,rgba(7,16,31,0.96),rgba(7,16,31,0.78),rgba(7,16,31,0.9))]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[1.05fr_0.95fr] md:px-6 md:py-24">
           <div className="flex flex-col justify-center">
-            <p className="mb-4 inline-flex w-fit items-center border-l-4 border-red-500 bg-white/7 px-3 py-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100">One page. Three companies. One clean route.</p>
+            <p className="mb-4 inline-flex w-fit items-center border-l-4 border-red-500 bg-white/7 px-3 py-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100">One place to start with Doug Oliver.</p>
             <h1 className="font-display text-5xl font-black uppercase leading-[0.95] tracking-[-0.04em] text-white md:text-7xl">
-              Get the right Doug crew on the job faster.
+              Not Sure Who to Call? Start With Doug.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-              DougABomb is the fast contractor umbrella site for development, building, and cleanup requests. Customers pick what they need, NGauge captures the lead, and the right company gets the next step.
+              DougABomb is the central hub for Doug Oliver’s roofing, building, remodeling, and property-service brands across Central Florida. Tell us what you need fixed, built, replaced, improved, or reduced — and we’ll route you to the right team.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button onClick={scrollToForm} className="rounded-md bg-cyan-300 px-6 py-4 text-base font-black uppercase tracking-[0.12em] text-slate-950 shadow-[0_0_34px_rgba(34,211,238,0.28)] transition hover:-translate-y-0.5 hover:bg-cyan-200">Tell Doug what you need</button>
-              <a href="tel:+10000000000" className="rounded-md border border-white/20 bg-white/8 px-6 py-4 text-center text-base font-black uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:bg-white/12">Call now</a>
-            </div>
-            <div className="mt-8 grid max-w-2xl gap-3 text-sm text-slate-300 sm:grid-cols-3">
-              <div className="border-l border-cyan-300/50 pl-3"><strong className="block text-white">Fast MVP</strong>Static page ready.</div>
-              <div className="border-l border-cyan-300/50 pl-3"><strong className="block text-white">NGauge ready</strong>Form and tags mapped.</div>
-              <div className="border-l border-cyan-300/50 pl-3"><strong className="block text-white">No rebuilds</strong>Existing sites stay intact.</div>
+              <button onClick={scrollToContact} className="rounded-md bg-cyan-300 px-6 py-4 text-base font-black uppercase tracking-[0.12em] text-slate-950 shadow-[0_0_34px_rgba(34,211,238,0.28)] transition hover:-translate-y-0.5 hover:bg-cyan-200">Tell Doug What You Need</button>
+              <button onClick={scrollToCompanies} className="rounded-md border border-white/20 bg-white/8 px-6 py-4 text-center text-base font-black uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:bg-white/12">Explore the Companies</button>
             </div>
           </div>
           <div className="relative flex items-center justify-center">
@@ -137,44 +149,39 @@ export default function Home() {
 
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-4 px-4 py-7 md:grid-cols-4 md:px-6">
-          {[
-            ["Primary job", "Route lead demand"],
-            ["Build model", "Single-page MVP"],
-            ["Form target", "NGauge / GHL embed"],
-            ["Launch window", "48 hours"],
-          ].map(([label, value]) => (
-            <div key={label} className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-4">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">{label}</p>
-              <p className="mt-1 font-display text-2xl font-black text-slate-950">{value}</p>
+          {trustItems.map(([label, value]) => (
+            <div key={`${label}-${value}`} className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-4">
+              <p className="font-display text-2xl font-black text-slate-950">{label}</p>
+              <p className="mt-1 text-xs font-black uppercase tracking-[0.2em] text-slate-500">{value}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="route" className="relative overflow-hidden bg-[#07101f] py-16 text-white">
+      <section id="services" className="relative overflow-hidden bg-[#07101f] py-16 text-white">
         <div className="absolute inset-0 bg-cover bg-center opacity-35" style={{ backgroundImage: `url(${routingPanel})` }} />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="section-kicker text-cyan-200">Service-routing logic</p>
-              <h2 className="section-title text-white">Pick the problem. Route the lead.</h2>
+              <p className="section-kicker text-cyan-200">Services</p>
+              <h2 className="section-title text-white">Choose the help you need.</h2>
               <p className="mt-4 text-lg leading-8 text-slate-300">
-                This is the page’s most important job. The customer should not need to understand the full company structure. They only need to choose the closest need and submit one clean request.
+                Whether the job is a roof, exterior upgrade, remodel, property savings review, or larger commercial scope, DougABomb gives you one clear starting point.
               </p>
               <div className="mt-6 rounded-xl border border-cyan-300/20 bg-black/25 p-5">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Current route</p>
-                <p className="mt-2 font-display text-3xl font-black text-white">{selectedRoute.route}</p>
-                <p className="mt-2 text-slate-300">{selectedRoute.note}</p>
-                <p className="mt-4 inline-flex rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-cyan-100">NGauge tag: {selectedRoute.tag}</p>
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Selected path</p>
+                <p className="mt-2 font-display text-3xl font-black text-white">{selectedRoute.path}</p>
+                <p className="mt-2 text-slate-300">{selectedRoute.copy}</p>
+                <button onClick={scrollToContact} className="mt-5 rounded-md bg-cyan-300 px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-slate-950 transition hover:bg-cyan-200">{selectedRoute.cta}</button>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {serviceRoutes.map((route) => (
                 <button key={route.id} onClick={() => setSelectedRoute(route)} className={`group rounded-xl border p-5 text-left transition hover:-translate-y-1 ${selectedRoute.id === route.id ? "border-cyan-300 bg-cyan-300/12 shadow-[0_0_28px_rgba(34,211,238,0.16)]" : "border-white/12 bg-white/7 hover:border-cyan-300/45"}`}>
-                  <span className="text-xs font-black uppercase tracking-[0.2em] text-red-300">Route</span>
+                  <span className="text-xs font-black uppercase tracking-[0.2em] text-red-300">Start here</span>
                   <h3 className="mt-2 font-display text-2xl font-black leading-tight text-white">{route.label}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">{route.note}</p>
-                  <span className="mt-5 inline-flex text-sm font-black text-cyan-200">Select and continue →</span>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{route.copy}</p>
+                  <span className="mt-5 inline-flex text-sm font-black text-cyan-200">{route.cta} →</span>
                 </button>
               ))}
             </div>
@@ -185,10 +192,10 @@ export default function Home() {
       <section id="companies" className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="max-w-3xl">
-            <p className="section-kicker text-cyan-700">Company cards</p>
-            <h2 className="section-title text-slate-950">Keep the three existing sites. Use DougABomb to send people to the right one.</h2>
+            <p className="section-kicker text-cyan-700">Companies</p>
+            <h2 className="section-title text-slate-950">Three brands. One place to begin.</h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
-              This preview does not redesign the current company websites. It gives Doug a clean umbrella homepage that explains the options, captures routed leads, and preserves the existing destination sites.
+              If you already know the company you need, you can go straight there. If not, start with DougABomb and Doug’s team can point you in the right direction.
             </p>
           </div>
           <div className="mt-9 grid gap-5 md:grid-cols-3">
@@ -198,7 +205,7 @@ export default function Home() {
                 <div className="p-6">
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">{company.tag}</p>
                   <h3 className="mt-2 font-display text-3xl font-black leading-none">{company.name}</h3>
-                  <p className="mt-4 min-h-24 text-sm leading-6 text-slate-300">{company.focus}</p>
+                  <p className="mt-4 min-h-28 text-sm leading-6 text-slate-300">{company.focus}</p>
                   <a href={company.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-md border border-cyan-300/40 px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-cyan-100 transition group-hover:bg-cyan-300 group-hover:text-slate-950">{company.cta}</a>
                 </div>
               </article>
@@ -207,64 +214,87 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-100 py-16">
+      <section id="about" className="bg-slate-100 py-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
           <div>
-            <p className="section-kicker text-cyan-700">CTA map</p>
-            <h2 className="section-title text-slate-950">Every action has a conversion job.</h2>
+            <p className="section-kicker text-cyan-700">About Doug</p>
+            <h2 className="section-title text-slate-950">One Clear Starting Point</h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
-              The site is intentionally simple: call, route, submit, or visit the existing company site. There are no extra funnels, gimmicks, or custom development dependencies required for launch.
+              Whether you already know which company you need or you simply know the problem you’re trying to solve, DougABomb gives you one place to start. Submit the request, choose your path, or contact Doug directly — and the right team can take it from there.
             </p>
+            <button onClick={scrollToContact} className="mt-7 rounded-md bg-slate-950 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white transition hover:bg-cyan-900">Tell Doug What You Need</button>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            {ctaRows.map(([location, cta, behavior]) => (
-              <div key={location} className="grid gap-2 border-b border-slate-100 p-5 last:border-b-0 md:grid-cols-[0.7fr_0.8fr_1.5fr]">
-                <p className="font-black text-slate-950">{location}</p>
-                <p className="font-semibold text-cyan-800">{cta}</p>
-                <p className="text-sm leading-6 text-slate-600">{behavior}</p>
-              </div>
-            ))}
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Fix", "Roofing leaks, storm damage, exterior issues, and property problems that need attention."],
+                ["Build", "Construction, remodeling, additions, windows, doors, siding, and owner-managed upgrades."],
+                ["Replace", "Aging roofs, exterior systems, and service arrangements that no longer fit."],
+                ["Reduce", "Waste and recycling costs for businesses, property managers, and commercial operators."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                  <p className="font-display text-3xl font-black text-slate-950">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{copy}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="ngauge-intake" className="bg-white py-16 pb-28 md:pb-16">
+      <section id="contact" className="bg-white py-16 pb-28 md:pb-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-[0.85fr_1.15fr] md:px-6">
           <div>
-            <p className="section-kicker text-cyan-700">NGauge form placement</p>
+            <p className="section-kicker text-cyan-700">Contact</p>
             <h2 className="section-title text-slate-950">{formTitle}</h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
-              This block is designed to be replaced with the live NGauge or GHL form embed. The visible fields match the lead-routing logic, while hidden fields can carry page source, selected company path, campaign, and call-tracking metadata.
+              Tell us what you’re trying to fix, build, replace, improve, or save money on. We’ll review the request and route it to the right company or next conversation.
             </p>
             <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">Hidden routing payload</p>
-              <dl className="mt-4 grid gap-3 text-sm">
-                <div className="flex justify-between gap-4"><dt className="text-slate-500">selected_service</dt><dd className="font-bold text-slate-950">{selectedRoute.label}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-slate-500">route_owner</dt><dd className="font-bold text-slate-950">{selectedRoute.route}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-slate-500">ngauge_tag</dt><dd className="font-bold text-slate-950">{selectedRoute.tag}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-slate-500">source</dt><dd className="font-bold text-slate-950">dougabomb_homepage</dd></div>
-              </dl>
+              <p className="text-base leading-7 text-slate-700">
+                Not sure which option to choose? Pick “Not Sure” and Doug’s team will point you in the right direction.
+              </p>
             </div>
           </div>
 
           <form className="rounded-2xl border border-slate-200 bg-slate-950 p-6 text-white shadow-2xl" onSubmit={(event) => event.preventDefault()}>
             <div className="mb-6 border-l-4 border-red-500 pl-4">
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">Preview intake form</p>
-              <h3 className="mt-2 font-display text-3xl font-black">Route this request</h3>
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">Tell us where to start</p>
+              <h3 className="mt-2 font-display text-3xl font-black">Send My Request</h3>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="field-label">Name<input className="field-input" placeholder="First and last name" /></label>
               <label className="field-label">Phone<input className="field-input" placeholder="Best callback number" /></label>
               <label className="field-label sm:col-span-2">Email<input className="field-input" placeholder="Email address" /></label>
-              <label className="field-label sm:col-span-2">What do you need?
-                <select className="field-input" value={selectedRoute.id} onChange={(event) => setSelectedRoute(serviceRoutes.find((route) => route.id === event.target.value) || serviceRoutes[3])}>
+              <label className="field-label sm:col-span-2">What do you need help with?
+                <select className="field-input" value={selectedRoute.id} onChange={(event) => setSelectedRoute(serviceRoutes.find((route) => route.id === event.target.value) || serviceRoutes[0])}>
                   {serviceRoutes.map((route) => <option key={route.id} value={route.id}>{route.label}</option>)}
+                  <option value="not-sure">Not Sure</option>
                 </select>
               </label>
-              <label className="field-label sm:col-span-2">Project details<textarea className="field-input min-h-28 resize-y" placeholder="Location, timing, project type, and anything Doug should know." /></label>
+              <label className="field-label">Property Type
+                <select className="field-input" defaultValue="">
+                  <option value="" disabled>Choose one</option>
+                  <option>Home</option>
+                  <option>Commercial Property</option>
+                  <option>Multi-Property / Portfolio</option>
+                  <option>Business / Operations</option>
+                </select>
+              </label>
+              <label className="field-label">City / ZIP<input className="field-input" placeholder="City or ZIP code" /></label>
+              <label className="field-label sm:col-span-2">How urgent is this?
+                <select className="field-input" defaultValue="">
+                  <option value="" disabled>Choose timing</option>
+                  <option>Emergency / As soon as possible</option>
+                  <option>This week</option>
+                  <option>This month</option>
+                  <option>Planning ahead</option>
+                </select>
+              </label>
+              <label className="field-label sm:col-span-2">Project Details<textarea className="field-input min-h-28 resize-y" placeholder="Tell Doug what is happening, where the property is, and what outcome you want." /></label>
             </div>
-            <button className="mt-6 w-full rounded-md bg-cyan-300 px-5 py-4 font-black uppercase tracking-[0.14em] text-slate-950 transition hover:bg-cyan-200">Send request to NGauge</button>
-            <p className="mt-4 text-center text-xs leading-5 text-slate-400">Preview only. The launch build can swap this form for the live NGauge embed and preserve the same routing fields.</p>
+            <button className="mt-6 w-full rounded-md bg-cyan-300 px-5 py-4 font-black uppercase tracking-[0.14em] text-slate-950 transition hover:bg-cyan-200">Send My Request</button>
+            <p className="mt-4 text-center text-xs leading-5 text-slate-400">Doug’s team will review your request and help point you toward the right next step.</p>
           </form>
         </div>
       </section>
@@ -272,14 +302,14 @@ export default function Home() {
       <footer className="border-t border-slate-800 bg-[#07101f] px-4 py-8 text-white md:px-6">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="font-display text-xl font-black tracking-[0.16em]">DOUGABOMB</p>
-          <p className="text-sm text-slate-400">Single-page MVP preview: routing, call tracking, company cards, and NGauge-ready intake.</p>
+          <p className="max-w-3xl text-sm text-slate-400">DougABomb is the central front door for Doug Oliver’s roofing, building, remodeling, and property-service brands.</p>
         </div>
       </footer>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/12 bg-[#07101f]/96 p-3 text-white shadow-2xl backdrop-blur md:hidden">
         <div className="grid grid-cols-2 gap-3">
-          <a href="tel:+10000000000" className="rounded-md border border-cyan-300/35 px-4 py-3 text-center text-sm font-black uppercase tracking-[0.1em] text-cyan-100">Call</a>
-          <button onClick={scrollToForm} className="rounded-md bg-cyan-300 px-4 py-3 text-sm font-black uppercase tracking-[0.1em] text-slate-950">Start</button>
+          <button onClick={scrollToCompanies} className="rounded-md border border-cyan-300/35 px-4 py-3 text-center text-sm font-black uppercase tracking-[0.1em] text-cyan-100">Companies</button>
+          <button onClick={scrollToContact} className="rounded-md bg-cyan-300 px-4 py-3 text-sm font-black uppercase tracking-[0.1em] text-slate-950">Start</button>
         </div>
       </div>
     </main>
