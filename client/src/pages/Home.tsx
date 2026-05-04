@@ -3,7 +3,7 @@ Design philosophy: Cyber-Industrial Utility Minimalism. Preserve the supplied Do
 */
 import { useMemo, useState } from "react";
 
-const logoUrl = "/manus-storage/Dougabombversion1_554f3997.png";
+const logoUrl = "/manus-storage/DougabombLogoMaster_00d09c1b.png";
 const heroBackplate = "https://d2xsxph8kpxj0f.cloudfront.net/94907206/kz5YP7UVmQ8afKUVRR3tmL/dougabomb-hero-backplate-evLANe2JJfhUE4yqmT9f7s.webp";
 const routingPanel = "https://d2xsxph8kpxj0f.cloudfront.net/94907206/kz5YP7UVmQ8afKUVRR3tmL/dougabomb-routing-panel-Zx8NqyQzKsSnzgWf3SVb3d.webp";
 const cardTexture = "https://d2xsxph8kpxj0f.cloudfront.net/94907206/kz5YP7UVmQ8afKUVRR3tmL/dougabomb-card-texture-EV8XxrqZrLgxRhBgWfAM23.webp";

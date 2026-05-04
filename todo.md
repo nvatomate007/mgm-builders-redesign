@@ -16,3 +16,13 @@
 | Build and search rendered output for banned terms. | Complete |
 | Confirm visible page still has header, hero, service cards, company cards, form section, and footer. | Complete |
 | Save checkpoint and deliver updated live link. | Pending final checkpoint |
+
+# Updated Logo Swap Todo
+
+| Item | Status |
+|---|---|
+| Use the new supplied logo file `DougabombLogoMaster.png` without re-opening or inspecting the image attachment. | Complete |
+| Upload the new logo as a managed web asset outside the project directory. | Complete |
+| Replace the current DougABomb logo URL references while preserving layout, copy, routing sections, and CTAs. | Complete |
+| Run a production build after the swap. | Complete |
+| Save a new checkpoint and return the refreshed preview link. | Pending final checkpoint |
