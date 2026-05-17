@@ -1,14 +1,15 @@
-/*
-Design philosophy: Cyber-Industrial Utility Minimalism. Preserve fast-loading structure, sharp utility typography, dark logo-led hero contrast, and restrained cyan/red accents.
-*/
+/* =============================================================
+   MGM BUILDERS LLC — Global Design System
+   Design Philosophy: Warm Craftsman Authority
+   Primary: MGM Red oklch(0.42 0.19 22) | Slate oklch(0.22 0.03 240) | Off-white oklch(0.985 0.003 90)
+   Typography: Playfair Display (display) + Source Sans 3 (body)
+   ============================================================= */
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Oswald", sans-serif;
-  --font-sans: "Source Sans 3", system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -48,70 +49,42 @@ Design philosophy: Cyber-Industrial Utility Minimalism. Preserve fast-loading st
 }
 
 :root {
-  --radius: 0.45rem;
-  --background: oklch(0.985 0.003 240);
-  --foreground: oklch(0.17 0.025 250);
+  --radius: 0.375rem;
+  --background: oklch(0.985 0.003 90);
+  --foreground: oklch(0.18 0.01 60);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.17 0.025 250);
+  --card-foreground: oklch(0.18 0.01 60);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.17 0.025 250);
-  --primary: oklch(0.77 0.135 210);
-  --primary-foreground: oklch(0.14 0.03 250);
-  --secondary: oklch(0.94 0.01 245);
-  --secondary-foreground: oklch(0.22 0.03 250);
-  --muted: oklch(0.94 0.006 245);
-  --muted-foreground: oklch(0.45 0.02 250);
-  --accent: oklch(0.72 0.16 28);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.57 0.23 28);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.89 0.01 245);
-  --input: oklch(0.89 0.01 245);
-  --ring: oklch(0.77 0.135 210);
-  --chart-1: oklch(0.77 0.135 210);
-  --chart-2: oklch(0.72 0.16 28);
-  --chart-3: oklch(0.45 0.05 250);
-  --chart-4: oklch(0.82 0.09 210);
-  --chart-5: oklch(0.62 0.18 28);
-  --sidebar: oklch(0.985 0.003 240);
-  --sidebar-foreground: oklch(0.17 0.025 250);
-  --sidebar-primary: oklch(0.77 0.135 210);
-  --sidebar-primary-foreground: oklch(0.14 0.03 250);
-  --sidebar-accent: oklch(0.94 0.01 245);
-  --sidebar-accent-foreground: oklch(0.22 0.03 250);
-  --sidebar-border: oklch(0.89 0.01 245);
-  --sidebar-ring: oklch(0.77 0.135 210);
+  --popover-foreground: oklch(0.18 0.01 60);
+  --primary: oklch(0.42 0.19 22);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.005 90);
+  --secondary-foreground: oklch(0.22 0.03 240);
+  --muted: oklch(0.94 0.005 90);
+  --muted-foreground: oklch(0.52 0.015 60);
+  --accent: oklch(0.94 0.005 90);
+  --accent-foreground: oklch(0.22 0.03 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.008 90);
+  --input: oklch(0.88 0.008 90);
+  --ring: oklch(0.42 0.19 22);
+  --chart-1: oklch(0.42 0.19 22);
+  --chart-2: oklch(0.22 0.03 240);
+  --chart-3: oklch(0.72 0.13 75);
+  --chart-4: oklch(0.6 0.1 22);
+  --chart-5: oklch(0.8 0.05 90);
+  --sidebar: oklch(0.22 0.03 240);
+  --sidebar-foreground: oklch(0.92 0.005 90);
+  --sidebar-primary: oklch(0.42 0.19 22);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.28 0.03 240);
+  --sidebar-accent-foreground: oklch(0.92 0.005 90);
+  --sidebar-border: oklch(0.3 0.03 240);
+  --sidebar-ring: oklch(0.42 0.19 22);
 }
 
-.dark {
-  --background: oklch(0.14 0.025 250);
-  --foreground: oklch(0.94 0.005 245);
-  --card: oklch(0.19 0.025 250);
-  --card-foreground: oklch(0.94 0.005 245);
-  --popover: oklch(0.19 0.025 250);
-  --popover-foreground: oklch(0.94 0.005 245);
-  --primary: oklch(0.77 0.135 210);
-  --primary-foreground: oklch(0.14 0.03 250);
-  --secondary: oklch(0.25 0.025 250);
-  --secondary-foreground: oklch(0.9 0.005 245);
-  --muted: oklch(0.25 0.025 250);
-  --muted-foreground: oklch(0.72 0.015 245);
-  --accent: oklch(0.72 0.16 28);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.64 0.21 28);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.77 0.135 210);
-  --sidebar: oklch(0.18 0.025 250);
-  --sidebar-foreground: oklch(0.94 0.005 245);
-  --sidebar-primary: oklch(0.77 0.135 210);
-  --sidebar-primary-foreground: oklch(0.14 0.03 250);
-  --sidebar-accent: oklch(0.25 0.025 250);
-  --sidebar-accent-foreground: oklch(0.9 0.005 245);
-  --sidebar-border: oklch(1 0 0 / 12%);
-  --sidebar-ring: oklch(0.77 0.135 210);
-}
+
 
 @layer base {
   * {
@@ -124,8 +97,9 @@ Design philosophy: Cyber-Industrial Utility Minimalism. Preserve fast-loading st
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
   }
+  h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -154,25 +128,26 @@ Design philosophy: Cyber-Industrial Utility Minimalism. Preserve fast-loading st
     min-width: 0;
   }
 
-  .section-kicker {
-    @apply text-xs font-black uppercase tracking-[0.24em];
+  .mgm-section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    border-left: 4px solid oklch(0.42 0.19 22);
+    padding-left: 1rem;
+    color: oklch(0.22 0.03 240);
   }
-
-  .section-title {
-    @apply font-display text-4xl font-black uppercase leading-[0.95] tracking-[-0.035em] md:text-5xl;
+  .mgm-service-card {
+    transition: box-shadow 200ms ease, border-left-color 200ms ease;
+    border-left: 4px solid transparent;
   }
-
-  .field-label {
-    @apply grid gap-2 text-sm font-black uppercase tracking-[0.12em] text-slate-300;
+  .mgm-service-card:hover {
+    box-shadow: 0 8px 24px oklch(0 0 0 / 12%);
+    border-left-color: oklch(0.42 0.19 22);
   }
-
-  .field-input {
-    @apply w-full rounded-md border border-white/10 bg-white/8 px-4 py-3 font-sans text-base normal-case tracking-normal text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20;
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-
-  .field-input option {
-    color: #0f172a;
-  }
+  .animate-fade-up { animation: fadeUp 0.45s ease forwards; }
 
   @media (min-width: 640px) {
     .container {

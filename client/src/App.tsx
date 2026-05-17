@@ -1,5 +1,7 @@
 /*
-Design philosophy: Cyber-Industrial Utility Minimalism. Keep routing single-page, fast, and focused on conversion into the DougABomb NGauge-ready homepage.
+MGM BUILDERS LLC — App Shell
+Design Philosophy: Warm Craftsman Authority
+Light theme, single-page routing, conversion-focused.
 */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
