@@ -18,7 +18,7 @@ const LICENSE = 'CBC-1263736';
 const ADDRESS = '121 S Orange Ave #1500, Orlando, FL 32801';
 const HOURS = 'Mon\u2013Fri 8am\u20138pm  |  Sat\u2013Sun 10am\u20136pm';
 const LOGO_URL = '/manus-storage/mgm_builders-logo_1c67ec7e.png';
-const VIDEO_URL = '/manus-storage/video_0be98a4a.mp4';
+const VIDEO_URL = '/manus-storage/MGMFINALVIDEO_7b0116e2.mp4';
 const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/placeholder/mgm-builders/';
 
 const NAV_LINKS = [
