@@ -1,11 +1,16 @@
-/* =============================================================
-   MGM BUILDERS LLC — Global Design System
-   Design Philosophy: Warm Craftsman Authority
-   Primary: MGM Red oklch(0.42 0.19 22) | Slate oklch(0.22 0.03 240) | Off-white oklch(0.985 0.003 90)
-   Typography: Playfair Display (display) + Source Sans 3 (body)
-   ============================================================= */
+/*
+ * MGM BUILDERS — DESIGN SYSTEM v2.0
+ * Visual Thesis: "Precision-Built Luxury" — an architect's drafting table brought to life.
+ * Palette sourced from construction video: deep blueprint navy, warm amber light,
+ * crisp white siding, charcoal steel, warm stone gray.
+ * Typography: Bebas Neue (all-caps architect accent) + Source Sans 3 (clean body).
+ * Texture: fine drafting grid paper on off-white sections.
+ * Motion: restrained, purposeful — no gimmicks.
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -33,94 +38,97 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --radius: 0.375rem;
-  --background: oklch(0.985 0.003 90);
-  --foreground: oklch(0.18 0.01 60);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.01 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.01 60);
-  --primary: oklch(0.42 0.19 22);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.94 0.005 90);
-  --secondary-foreground: oklch(0.22 0.03 240);
-  --muted: oklch(0.94 0.005 90);
-  --muted-foreground: oklch(0.52 0.015 60);
-  --accent: oklch(0.94 0.005 90);
-  --accent-foreground: oklch(0.22 0.03 240);
-  --destructive: oklch(0.577 0.245 27.325);
+  --radius: 2px;
+
+  /* ── Video-extracted palette ── */
+  --blueprint-navy:    oklch(0.18 0.08 250);
+  --blueprint-mid:     oklch(0.22 0.09 250);
+  --amber-glow:        oklch(0.75 0.16 75);
+  --amber-light:       oklch(0.82 0.14 75);
+  --stone-gray:        oklch(0.72 0.02 60);
+  --charcoal:          oklch(0.22 0.005 260);
+  --off-white:         oklch(0.975 0.005 80);
+  --paper-white:       oklch(0.985 0.004 80);
+  --coral-accent:      oklch(0.62 0.13 30);
+
+  /* ── Semantic tokens ── */
+  --background:        var(--paper-white);
+  --foreground:        var(--charcoal);
+  --card:              var(--paper-white);
+  --card-foreground:   var(--charcoal);
+  --popover:           var(--paper-white);
+  --popover-foreground: var(--charcoal);
+  --primary:           var(--blueprint-navy);
+  --primary-foreground: oklch(1 0 0);
+  --secondary:         oklch(0.94 0.005 80);
+  --secondary-foreground: var(--charcoal);
+  --muted:             oklch(0.94 0.005 80);
+  --muted-foreground:  oklch(0.52 0.01 60);
+  --accent:            var(--amber-glow);
+  --accent-foreground: var(--charcoal);
+  --destructive:       oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.88 0.008 90);
-  --input: oklch(0.88 0.008 90);
-  --ring: oklch(0.42 0.19 22);
-  --chart-1: oklch(0.42 0.19 22);
-  --chart-2: oklch(0.22 0.03 240);
-  --chart-3: oklch(0.72 0.13 75);
-  --chart-4: oklch(0.6 0.1 22);
-  --chart-5: oklch(0.8 0.05 90);
-  --sidebar: oklch(0.22 0.03 240);
-  --sidebar-foreground: oklch(0.92 0.005 90);
-  --sidebar-primary: oklch(0.42 0.19 22);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.28 0.03 240);
-  --sidebar-accent-foreground: oklch(0.92 0.005 90);
-  --sidebar-border: oklch(0.3 0.03 240);
-  --sidebar-ring: oklch(0.42 0.19 22);
+  --border:            oklch(0.88 0.008 80);
+  --input:             oklch(0.88 0.008 80);
+  --ring:              var(--amber-glow);
 }
 
-
-
+/* ─── BASE ──────────────────────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
   }
-  h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--blueprint-navy);
+  }
 
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
   [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
   a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
+  select:not(:disabled) {
     @apply cursor-pointer;
   }
 }
 
+/* ─── COMPONENTS ────────────────────────────────────────────────────────── */
 @layer components {
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 1200px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
   }
 
   .flex {
@@ -128,39 +136,357 @@
     min-width: 0;
   }
 
-  .mgm-section-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    border-left: 4px solid oklch(0.42 0.19 22);
-    padding-left: 1rem;
-    color: oklch(0.22 0.03 240);
-  }
-  .mgm-service-card {
-    transition: box-shadow 200ms ease, border-left-color 200ms ease;
-    border-left: 4px solid transparent;
-  }
-  .mgm-service-card:hover {
-    box-shadow: 0 8px 24px oklch(0 0 0 / 12%);
-    border-left-color: oklch(0.42 0.19 22);
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-up { animation: fadeUp 0.45s ease forwards; }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+  /* ── Architect accent font ── */
+  .font-arch {
+    font-family: 'Bebas Neue', 'Source Sans 3', sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      max-width: 1280px;
-    }
+  .font-mono-arch {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Drafting grid paper texture ── */
+  .grid-paper {
+    background-color: var(--paper-white);
+    background-image:
+      linear-gradient(oklch(0.18 0.08 250 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.18 0.08 250 / 0.07) 1px, transparent 1px),
+      linear-gradient(oklch(0.18 0.08 250 / 0.13) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.18 0.08 250 / 0.13) 1px, transparent 1px);
+    background-size:
+      20px 20px,
+      20px 20px,
+      100px 100px,
+      100px 100px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  }
+
+  .grid-paper-dark {
+    background-color: var(--blueprint-navy);
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.08) 1px, transparent 1px);
+    background-size:
+      20px 20px,
+      20px 20px,
+      100px 100px,
+      100px 100px;
+  }
+
+  /* ── Section eyebrow label ── */
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber-glow);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2px;
+    background: var(--amber-glow);
+    flex-shrink: 0;
+  }
+
+  /* ── Amber rule line ── */
+  .amber-rule {
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amber-glow), var(--amber-light));
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--amber-glow);
+    color: var(--blueprint-navy);
+    padding: 0.9rem 2.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px oklch(0.75 0.16 75 / 0.4);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: transparent;
+    color: oklch(1 0 0);
+    padding: 0.9rem 2.2rem;
+    border: 1.5px solid oklch(1 0 0 / 0.5);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--amber-glow);
+    color: var(--amber-glow);
+    background: oklch(0.75 0.16 75 / 0.08);
+  }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--blueprint-navy);
+    color: oklch(1 0 0);
+    padding: 0.9rem 2.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    text-decoration: none;
+  }
+
+  .btn-dark:hover {
+    background: var(--blueprint-mid);
+    transform: translateY(-1px);
+  }
+
+  /* ── Service card ── */
+  .service-card {
+    background: var(--paper-white);
+    border: 1px solid oklch(0.88 0.008 80);
+    border-top: 3px solid var(--amber-glow);
+    padding: 2rem 1.75rem;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px oklch(0.18 0.08 250 / 0.12);
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--amber-glow);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  /* ── Nav scroll state ── */
+  .nav-scrolled {
+    background: oklch(0.18 0.08 250 / 0.97) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px oklch(0 0 0 / 0.3);
+  }
+
+  /* ── Hero video ── */
+  .hero-video-wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.08 250 / 0.88) 0%,
+      oklch(0.18 0.08 250 / 0.65) 55%,
+      oklch(0.18 0.08 250 / 0.45) 100%
+    );
+  }
+
+  /* ── Testimonial card ── */
+  .testimonial-card {
+    background: var(--paper-white);
+    border-left: 4px solid var(--amber-glow);
+    padding: 2rem 2rem 2rem 2.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px oklch(0.18 0.08 250 / 0.06);
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    line-height: 1;
+    color: var(--amber-glow);
+    opacity: 0.2;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.75rem;
+    pointer-events: none;
+  }
+
+  /* ── Form inputs ── */
+  .arch-input {
+    width: 100%;
+    background: oklch(1 0 0 / 0.06);
+    border: 1px solid oklch(1 0 0 / 0.18);
+    border-bottom: 2px solid oklch(0.75 0.16 75 / 0.45);
+    color: oklch(1 0 0);
+    padding: 0.9rem 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .arch-input::placeholder {
+    color: oklch(1 0 0 / 0.38);
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+  }
+
+  .arch-input:focus {
+    border-bottom-color: var(--amber-glow);
+    background: oklch(1 0 0 / 0.10);
+  }
+
+  .arch-select {
+    width: 100%;
+    background: oklch(1 0 0 / 0.06);
+    border: 1px solid oklch(1 0 0 / 0.18);
+    border-bottom: 2px solid oklch(0.75 0.16 75 / 0.45);
+    color: oklch(1 0 0);
+    padding: 0.9rem 2.5rem 0.9rem 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E6A822' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    transition: border-color 0.2s ease;
+  }
+
+  .arch-select:focus {
+    border-bottom-color: var(--amber-glow);
+  }
+
+  .arch-select option {
+    background: oklch(0.18 0.08 250);
+    color: oklch(1 0 0);
+  }
+
+  /* ── Animations ── */
+  /* Elements are visible by default; JS adds will-animate before IntersectionObserver fires */
+  .animate-fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .animate-fade-up.will-animate {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .animate-fade-up.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  .stagger-children > *:nth-child(1) { transition-delay: 0.04s; }
+  .stagger-children > *:nth-child(2) { transition-delay: 0.10s; }
+  .stagger-children > *:nth-child(3) { transition-delay: 0.16s; }
+  .stagger-children > *:nth-child(4) { transition-delay: 0.22s; }
+  .stagger-children > *:nth-child(5) { transition-delay: 0.28s; }
+  .stagger-children > *:nth-child(6) { transition-delay: 0.34s; }
+
+  /* ── Blueprint corner bracket decoration ── */
+  .corner-bracket {
+    position: relative;
+  }
+
+  .corner-bracket::before,
+  .corner-bracket::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: var(--amber-glow);
+    border-style: solid;
+  }
+
+  .corner-bracket::before {
+    top: -4px;
+    left: -4px;
+    border-width: 2px 0 0 2px;
+  }
+
+  .corner-bracket::after {
+    bottom: -4px;
+    right: -4px;
+    border-width: 0 2px 2px 0;
+  }
+
+  /* ── Trust stat item ── */
+  .stat-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid oklch(1 0 0 / 0.12);
+  }
+
+  .stat-item:last-child {
+    border-right: none;
+  }
+
+  /* ── Process step ── */
+  .process-step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .process-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--amber-glow);
+    opacity: 0.35;
+    min-width: 3rem;
+    text-align: right;
   }
 }
