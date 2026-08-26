@@ -10,7 +10,6 @@
 
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,36 +43,36 @@
   --radius: 2px;
 
   /* ── Video-extracted palette ── */
-  --blueprint-navy:    oklch(0.18 0.08 250);
-  --blueprint-mid:     oklch(0.22 0.09 250);
-  --amber-glow:        oklch(0.75 0.16 75);
-  --amber-light:       oklch(0.82 0.14 75);
-  --stone-gray:        oklch(0.72 0.02 60);
-  --charcoal:          oklch(0.22 0.005 260);
-  --off-white:         oklch(0.975 0.005 80);
-  --paper-white:       oklch(0.985 0.004 80);
-  --coral-accent:      oklch(0.62 0.13 30);
+  --blueprint-navy: oklch(0.18 0.08 250);
+  --blueprint-mid: oklch(0.22 0.09 250);
+  --amber-glow: oklch(0.75 0.16 75);
+  --amber-light: oklch(0.82 0.14 75);
+  --stone-gray: oklch(0.72 0.02 60);
+  --charcoal: oklch(0.22 0.005 260);
+  --off-white: oklch(0.975 0.005 80);
+  --paper-white: oklch(0.985 0.004 80);
+  --coral-accent: oklch(0.62 0.13 30);
 
   /* ── Semantic tokens ── */
-  --background:        var(--paper-white);
-  --foreground:        var(--charcoal);
-  --card:              var(--paper-white);
-  --card-foreground:   var(--charcoal);
-  --popover:           var(--paper-white);
+  --background: var(--paper-white);
+  --foreground: var(--charcoal);
+  --card: var(--paper-white);
+  --card-foreground: var(--charcoal);
+  --popover: var(--paper-white);
   --popover-foreground: var(--charcoal);
-  --primary:           var(--blueprint-navy);
+  --primary: var(--blueprint-navy);
   --primary-foreground: oklch(1 0 0);
-  --secondary:         oklch(0.94 0.005 80);
+  --secondary: oklch(0.94 0.005 80);
   --secondary-foreground: var(--charcoal);
-  --muted:             oklch(0.94 0.005 80);
-  --muted-foreground:  oklch(0.52 0.01 60);
-  --accent:            var(--amber-glow);
+  --muted: oklch(0.94 0.005 80);
+  --muted-foreground: oklch(0.52 0.01 60);
+  --accent: var(--amber-glow);
   --accent-foreground: var(--charcoal);
-  --destructive:       oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border:            oklch(0.88 0.008 80);
-  --input:             oklch(0.88 0.008 80);
-  --ring:              var(--amber-glow);
+  --border: oklch(0.88 0.008 80);
+  --input: oklch(0.88 0.008 80);
+  --ring: var(--amber-glow);
 }
 
 /* ─── BASE ──────────────────────────────────────────────────────────────── */
@@ -91,13 +90,18 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-family: "Source Sans 3", system-ui, sans-serif;
     font-size: 17px;
     line-height: 1.65;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans 3', system-ui, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Source Sans 3", system-ui, sans-serif;
     font-weight: 700;
     line-height: 1.15;
     color: var(--blueprint-navy);
@@ -138,13 +142,13 @@
 
   /* ── Architect accent font ── */
   .font-arch {
-    font-family: 'Bebas Neue', 'Source Sans 3', sans-serif;
+    font-family: "Bebas Neue", "Source Sans 3", sans-serif;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
   .font-mono-arch {
-    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-family: "Courier Prime", "Courier New", monospace;
     letter-spacing: 0.06em;
   }
 
@@ -161,7 +165,11 @@
       20px 20px,
       100px 100px,
       100px 100px;
-    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    background-position:
+      -1px -1px,
+      -1px -1px,
+      -1px -1px,
+      -1px -1px;
   }
 
   .grid-paper-dark {
@@ -180,7 +188,7 @@
 
   /* ── Section eyebrow label ── */
   .section-label {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 0.78rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -191,7 +199,7 @@
   }
 
   .section-label::before {
-    content: '';
+    content: "";
     display: block;
     width: 2rem;
     height: 2px;
@@ -213,7 +221,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.05rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -222,8 +230,18 @@
     padding: 0.9rem 2.2rem;
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease,
+      box-shadow 0.2s ease;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
     text-decoration: none;
   }
 
@@ -237,7 +255,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.05rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -246,8 +264,18 @@
     padding: 0.9rem 2.2rem;
     border: 1.5px solid oklch(1 0 0 / 0.5);
     cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background 0.2s ease;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
     text-decoration: none;
   }
 
@@ -261,7 +289,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.05rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -270,8 +298,17 @@
     padding: 0.9rem 2.2rem;
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
     text-decoration: none;
   }
 
@@ -287,7 +324,9 @@
     border-top: 3px solid var(--amber-glow);
     padding: 2rem 1.75rem;
     position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .service-card:hover {
@@ -296,7 +335,7 @@
   }
 
   .service-card::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -349,7 +388,7 @@
 
   .testimonial-card::before {
     content: '"';
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 6rem;
     line-height: 1;
     color: var(--amber-glow);
@@ -361,6 +400,19 @@
   }
 
   /* ── Form inputs ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .arch-input {
     width: 100%;
     background: oklch(1 0 0 / 0.06);
@@ -368,22 +420,24 @@
     border-bottom: 2px solid oklch(0.75 0.16 75 / 0.45);
     color: oklch(1 0 0);
     padding: 0.9rem 1rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
   }
 
   .arch-input::placeholder {
     color: oklch(1 0 0 / 0.38);
-    font-family: 'Courier Prime', monospace;
+    font-family: "Courier Prime", monospace;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
   }
 
   .arch-input:focus {
     border-bottom-color: var(--amber-glow);
-    background: oklch(1 0 0 / 0.10);
+    background: oklch(1 0 0 / 0.1);
   }
 
   .arch-select {
@@ -393,7 +447,7 @@
     border-bottom: 2px solid oklch(0.75 0.16 75 / 0.45);
     color: oklch(1 0 0);
     padding: 0.9rem 2.5rem 0.9rem 1rem;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-size: 0.95rem;
     outline: none;
     cursor: pointer;
@@ -418,7 +472,9 @@
   .animate-fade-up {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.55s ease, transform 0.55s ease;
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
   }
   .animate-fade-up.will-animate {
     opacity: 0;
@@ -428,12 +484,24 @@
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
-  .stagger-children > *:nth-child(1) { transition-delay: 0.04s; }
-  .stagger-children > *:nth-child(2) { transition-delay: 0.10s; }
-  .stagger-children > *:nth-child(3) { transition-delay: 0.16s; }
-  .stagger-children > *:nth-child(4) { transition-delay: 0.22s; }
-  .stagger-children > *:nth-child(5) { transition-delay: 0.28s; }
-  .stagger-children > *:nth-child(6) { transition-delay: 0.34s; }
+  .stagger-children > *:nth-child(1) {
+    transition-delay: 0.04s;
+  }
+  .stagger-children > *:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+  .stagger-children > *:nth-child(3) {
+    transition-delay: 0.16s;
+  }
+  .stagger-children > *:nth-child(4) {
+    transition-delay: 0.22s;
+  }
+  .stagger-children > *:nth-child(5) {
+    transition-delay: 0.28s;
+  }
+  .stagger-children > *:nth-child(6) {
+    transition-delay: 0.34s;
+  }
 
   /* ── Blueprint corner bracket decoration ── */
   .corner-bracket {
@@ -442,7 +510,7 @@
 
   .corner-bracket::before,
   .corner-bracket::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 16px;
     height: 16px;
@@ -481,7 +549,7 @@
   }
 
   .process-number {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 3rem;
     line-height: 1;
     color: var(--amber-glow);
