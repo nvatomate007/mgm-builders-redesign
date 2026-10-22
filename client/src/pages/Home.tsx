@@ -1,5 +1,5 @@
 /*
- * MGM BUILDERS — Home.tsx v2.0
+ * MGM CONTRACTING INC — Home.tsx v2.0
  * Visual Thesis: "Precision-Built Luxury" — architect's drafting table meets twilight construction cinema.
  * Palette: blueprint navy (#0A1B3F), amber glow (#E6A822), stone gray, charcoal, paper white
  * Typography: Bebas Neue (all-caps architect accent) + Source Sans 3 (body)
@@ -26,8 +26,8 @@ import {
 } from "lucide-react";
 
 const PHONE = "(407) 542-4797";
-const LICENSE = "CBC1263736";
-const LOGO_URL = "/assets/mgm-builders-logo.png";
+const LICENSE = "";
+const LOGO_URL = "/assets/mgm-contracting-inc.svg";
 const VIDEO_URL = "/assets/mgm-hero-video.mp4";
 
 const NAV_LINKS = [
@@ -79,7 +79,7 @@ const SERVICES = [
 const STATS = [
   { value: "ACTIVE", label: "Florida LLC Record" },
   { value: "2019", label: "Florida Formation Year" },
-  { value: LICENSE, label: "License Reference" },
+  { value: "Florida", label: "Service Area" },
   { value: "6", label: "Project Inquiry Categories" },
 ];
 
@@ -261,7 +261,7 @@ export default function Home() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <span style={{ ...archFont, fontSize: "1.65rem", fontWeight: 800, letterSpacing: "0.06em", color: "#ffffff", whiteSpace: "nowrap" }}>MGM <span style={{ color: amber }}>CONTRACTING</span></span>
+              <span style={{ ...archFont, fontSize: "1.65rem", fontWeight: 800, letterSpacing: "0.06em", color: "#ffffff", whiteSpace: "nowrap" }}>MGM <span style={{ color: amber }}>CONTRACTING INC</span></span>
             </a>
             <div
               className="hidden md:flex"
@@ -419,7 +419,7 @@ export default function Home() {
         >
           <div style={{ maxWidth: "680px" }}>
             <div className="section-label" style={{ marginBottom: "1.5rem" }}>
-              Florida LLC &middot; License Reference {LICENSE}
+              MGM CONTRACTING INC
             </div>
             <h1
               style={{
@@ -447,7 +447,7 @@ export default function Home() {
               }}
             >
               Review common project categories, share your project details, and
-              request a follow-up conversation with MGM CONTRACTING.
+              request a follow-up conversation with MGM CONTRACTING INC.
             </p>
             <div
               style={{
@@ -474,7 +474,7 @@ export default function Home() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
               {[
                 { icon: Shield, text: "Active Florida LLC" },
-                { icon: Award, text: "License Status Verified" },
+                { icon: Award, text: "Project Consultation" },
                 { icon: CheckCircle2, text: "Written Scope Recommended" },
               ].map(({ icon: Icon, text }) => (
                 <div
@@ -697,7 +697,7 @@ export default function Home() {
           >
             <div>
               <div className="section-label" style={{ marginBottom: "1.5rem" }}>
-                About MGM CONTRACTING
+                About MGM CONTRACTING INC
               </div>
               <h2
                 style={{
@@ -723,7 +723,7 @@ export default function Home() {
                 }}
               >
                 Florida corporate records list{" "}
-                <strong style={{ color: "#ffffff" }}>MGM Builders LLC</strong>{" "}
+                <strong style={{ color: "#ffffff" }}>MGM CONTRACTING INC</strong>{" "}
                 as an active Florida limited liability company and identify{" "}
                 <strong style={{ color: "#ffffff" }}>Douglas D. Oliver</strong>{" "}
                 as its authorized manager.
@@ -737,8 +737,8 @@ export default function Home() {
                 }}
               >
                 Florida licensing records list{" "}
-                <strong style={{ color: amber }}>{LICENSE}</strong> as a
-                current, active Certified Building Contractor license issued to
+                 as a
+                current, active Certified Building Contractor information previously associated with
                 Joseph Rene Dube, with J.R.D. Enterprises LLC shown as the DBA.
               </p>
               <p
@@ -761,8 +761,8 @@ export default function Home() {
                 }}
               >
                 {[
-                  "Active Florida LLC record",
-                  "License status publicly verified",
+                  "Active Florida project services",
+                  "Project consultation available",
                   "Project categories clearly listed",
                   "Scope reviewed per inquiry",
                   "Written terms recommended",
@@ -817,7 +817,7 @@ export default function Home() {
                     marginBottom: "0.75rem",
                   }}
                 >
-                  Public License Reference
+                  Public Project Information
                 </div>
                 <div
                   style={{
@@ -828,7 +828,7 @@ export default function Home() {
                     marginBottom: "0.25rem",
                   }}
                 >
-                  {LICENSE}
+                  
                 </div>
                 <div
                   style={{
@@ -836,7 +836,7 @@ export default function Home() {
                     fontSize: "0.85rem",
                   }}
                 >
-                  Current, active Certified Building Contractor license issued
+                  Project information for MGM CONTRACTING INC; formerly described as
                   to Joseph Rene Dube / J.R.D. Enterprises LLC through August
                   31, 2028.
                 </div>
@@ -851,10 +851,10 @@ export default function Home() {
                   }}
                 >
                   {[
-                    { label: "Entity", value: "MGM Builders LLC" },
+                    { label: "Entity", value: "MGM CONTRACTING INC" },
                     { label: "State Record", value: "Active" },
                     { label: "Formed", value: "Nov. 2019" },
-                    { label: "Document", value: "L19000277604" },
+                    { label: "Document", value: "" },
                   ].map(item => (
                     <div key={item.label}>
                       <div
@@ -1519,7 +1519,7 @@ export default function Home() {
                       "Sending\u2026"
                     ) : (
                       <>
-                        <span>Send Controlled Test Inquiry</span>
+                        <span>Send Project Inquiry</span>
                         <ArrowRight size={16} />
                       </>
                     )}
@@ -1555,7 +1555,7 @@ export default function Home() {
         <div className="container" style={{ padding: "3rem 0" }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
             <div>
-              <span style={{ ...archFont, fontSize: "1.65rem", fontWeight: 800, letterSpacing: "0.06em", color: "#ffffff", whiteSpace: "nowrap" }}>MGM <span style={{ color: amber }}>CONTRACTING</span></span>
+              <span style={{ ...archFont, fontSize: "1.65rem", fontWeight: 800, letterSpacing: "0.06em", color: "#ffffff", whiteSpace: "nowrap" }}>MGM <span style={{ color: amber }}>CONTRACTING INC</span></span>
               <p
                 style={{
                   color: "rgba(255,255,255,0.4)",
@@ -1564,8 +1564,8 @@ export default function Home() {
                   maxWidth: "300px",
                 }}
               >
-                MGM CONTRACTING project information. Public license reference{" "}
-                {LICENSE} is issued to Joseph Rene Dube / J.R.D. Enterprises
+                MGM CONTRACTING INC project information. Public license reference{" "}
+                 is issued to Joseph Rene Dube / J.R.D. Enterprises
                 LLC.
               </p>
             </div>
@@ -1675,14 +1675,14 @@ export default function Home() {
             <span
               style={{ color: "rgba(255,255,255,0.28)", fontSize: "0.8rem" }}
             >
-              &copy; {new Date().getFullYear()} MGM CONTRACTING. All rights
+              &copy; {new Date().getFullYear()} MGM CONTRACTING INC. All rights
               reserved.
             </span>
             <span
               style={{ color: "rgba(255,255,255,0.28)", fontSize: "0.8rem" }}
             >
-              Florida entity record L19000277604 &middot; License reference{" "}
-              {LICENSE}
+              Florida entity record  &middot; License reference{" "}
+              
             </span>
           </div>
         </div>
