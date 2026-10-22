@@ -6,8 +6,6 @@ import {
 } from "./contact-core.js";
 
 const MAX_BODY_BYTES = 16_384;
-const CONTROLLED_PREVIEW_DELIVERY_URL =
-  "https://webhook.site/280b7758-7406-445a-8db1-46dec1dc5035";
 
 function sendJson(
   res: ServerResponse,
@@ -53,7 +51,11 @@ export default async function handler(
   }
 
   const deliveryUrl =
-    process.env.FORM_DELIVERY_URL || CONTROLLED_PREVIEW_DELIVERY_URL;
+    process.env.FORM_DELIVERY_URL;
+
+  if (!deliveryUrl) {
+    return sendJson(res, 503, { accepted: false, error: "Contact form delivery is not configured. Please email info@mgmfla.com." });
+  }
 
   let body: unknown;
   try {
@@ -85,7 +87,7 @@ export default async function handler(
     return sendJson(res, 202, {
       accepted: true,
       requestId,
-      deliveryMode: process.env.FORM_DELIVERY_MODE || "controlled-preview",
+      deliveryMode: process.env.FORM_DELIVERY_MODE || "configured-delivery",
     });
   } catch (error) {
     console.error("MGM form delivery failed", {
