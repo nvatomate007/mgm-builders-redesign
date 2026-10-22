@@ -693,11 +693,7 @@ export default function Home() {
                   fontSize: "1rem",
                 }}
               >
-                Florida corporate records list{" "}
-                <strong style={{ color: "#ffffff" }}>MGM CONTRACTING INC</strong>{" "}
-                as an active Florida limited liability company and identify{" "}
-                <strong style={{ color: "#ffffff" }}>Douglas D. Oliver</strong>{" "}
-                as its authorized manager.
+                MGM CONTRACTING INC welcomes inquiries about roofing, siding, windows, doors, remodeling, and additions.
               </p>
               <p
                 style={{
@@ -707,10 +703,7 @@ export default function Home() {
                   fontSize: "1rem",
                 }}
               >
-                Florida licensing records list{" "}
-                 as a
-                current, active Certified Building Contractor information previously associated with
-                Joseph Rene Dube, with J.R.D. Enterprises LLC shown as the DBA.
+                Discuss the project details directly with MGM CONTRACTING INC and confirm terms in writing before work begins.
               </p>
               <p
                 style={{
