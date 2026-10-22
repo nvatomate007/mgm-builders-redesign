@@ -261,16 +261,7 @@ export default function Home() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <img
-                src={LOGO_URL}
-                alt="MGM Builders LLC"
-                style={{
-                  height: "48px",
-                  width: "auto",
-                  objectFit: "contain",
-                  filter: "brightness(0) invert(1)",
-                }}
-              />
+              <span style={{ ...archFont, fontSize: "1.65rem", fontWeight: 800, letterSpacing: "0.06em", color: "#ffffff", whiteSpace: "nowrap" }}>MGM <span style={{ color: amber }}>CONTRACTING</span></span>
             </a>
             <div
               className="hidden md:flex"
@@ -456,7 +447,7 @@ export default function Home() {
               }}
             >
               Review common project categories, share your project details, and
-              request a follow-up conversation with MGM Builders LLC.
+              request a follow-up conversation with MGM CONTRACTING.
             </p>
             <div
               style={{
@@ -706,7 +697,7 @@ export default function Home() {
           >
             <div>
               <div className="section-label" style={{ marginBottom: "1.5rem" }}>
-                About MGM Builders
+                About MGM CONTRACTING
               </div>
               <h2
                 style={{
@@ -1223,7 +1214,7 @@ export default function Home() {
                 }}
               >
                 This non-production preview sends submissions only to a
-                controlled test sink. It does not contact MGM Builders or any
+                controlled test sink. It does not contact MGM CONTRACTING or any
                 client recipient.
               </p>
               <div
@@ -1564,17 +1555,7 @@ export default function Home() {
         <div className="container" style={{ padding: "3rem 0" }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
             <div>
-              <img
-                src={LOGO_URL}
-                alt="MGM Builders LLC"
-                style={{
-                  height: "40px",
-                  width: "auto",
-                  objectFit: "contain",
-                  filter: "brightness(0) invert(1)",
-                  marginBottom: "1rem",
-                }}
-              />
+              <span style={{ ...archFont, fontSize: "1.65rem", fontWeight: 800, letterSpacing: "0.06em", color: "#ffffff", whiteSpace: "nowrap" }}>MGM <span style={{ color: amber }}>CONTRACTING</span></span>
               <p
                 style={{
                   color: "rgba(255,255,255,0.4)",
@@ -1583,7 +1564,7 @@ export default function Home() {
                   maxWidth: "300px",
                 }}
               >
-                MGM Builders LLC project information. Public license reference{" "}
+                MGM CONTRACTING project information. Public license reference{" "}
                 {LICENSE} is issued to Joseph Rene Dube / J.R.D. Enterprises
                 LLC.
               </p>
@@ -1694,7 +1675,7 @@ export default function Home() {
             <span
               style={{ color: "rgba(255,255,255,0.28)", fontSize: "0.8rem" }}
             >
-              &copy; {new Date().getFullYear()} MGM Builders LLC. All rights
+              &copy; {new Date().getFullYear()} MGM CONTRACTING. All rights
               reserved.
             </span>
             <span
