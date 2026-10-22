@@ -179,49 +179,20 @@ export default function Home() {
     setFormData(prev => ({ ...prev, [e.target.name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus("sending");
-    setFormError("");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const result = await response
-        .json()
-        .catch(() => ({ accepted: false, error: "Invalid server response." }));
-
-      if (!response.ok || result.accepted !== true) {
-        throw new Error(result.error || "Your request was not delivered.");
-      }
-
-      setFormStatus("sent");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        address: "",
-        city: "",
-        zip: "",
-        service: "",
-        details: "",
-        company: "",
-        consent: false,
-      });
-    } catch (error) {
-      setFormStatus("error");
-      setFormError(
-        error instanceof Error
-          ? error.message
-          : "Your request was not delivered."
-      );
-    }
+    const subject = encodeURIComponent("MGM CONTRACTING INC — Project Inquiry");
+    const body = encodeURIComponent([
+      "Name: " + formData.name,
+      "Email: " + formData.email,
+      "Phone: " + formData.phone,
+      "Address: " + formData.address,
+      "City: " + formData.city,
+      "ZIP: " + formData.zip,
+      "Service: " + formData.service,
+      "Details: " + formData.details
+    ].join("\n"));
+    window.location.href = "mailto:info@mgmfla.com?subject=" + subject + "&body=" + body;
   };
 
   const labelStyle: React.CSSProperties = {
@@ -1519,7 +1490,7 @@ export default function Home() {
                       "Sending\u2026"
                     ) : (
                       <>
-                        <span>Send Project Inquiry</span>
+                        <span>Open Email to Send Inquiry</span>
                         <ArrowRight size={16} />
                       </>
                     )}
