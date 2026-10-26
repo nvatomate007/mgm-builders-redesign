@@ -799,9 +799,7 @@ export default function Home() {
                     fontSize: "0.85rem",
                   }}
                 >
-                  Project information for MGM CONTRACTING INC; formerly described as
-                  to Joseph Rene Dube / J.R.D. Enterprises LLC through August
-                  31, 2028.
+                  Discuss your project directly with MGM CONTRACTING INC. Confirm all terms in writing before work begins.
                 </div>
                 <div
                   style={{
