@@ -26,7 +26,6 @@ import {
 } from "lucide-react";
 
 const PHONE = "(407) 542-4797";
-const LICENSE = "";
 const LOGO_URL = "/assets/mgm-contracting-inc.svg";
 const VIDEO_URL = "/assets/mgm-hero-video.mp4";
 
@@ -77,8 +76,8 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: "ACTIVE", label: "Florida LLC Record" },
-  { value: "2019", label: "Florida Formation Year" },
+  { value: "FLORIDA", label: "Service Area" },
+  { value: "6", label: "Project Categories" },
   { value: "Florida", label: "Service Area" },
   { value: "6", label: "Project Inquiry Categories" },
 ];
@@ -444,7 +443,7 @@ export default function Home() {
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
               {[
-                { icon: Shield, text: "Active Florida LLC" },
+                { icon: Shield, text: "Florida Project Inquiries" },
                 { icon: Award, text: "Project Consultation" },
                 { icon: CheckCircle2, text: "Written Scope Recommended" },
               ].map(({ icon: Icon, text }) => (
@@ -713,7 +712,7 @@ export default function Home() {
                   fontSize: "1rem",
                 }}
               >
-                License attribution, insurance, scope, pricing, scheduling,
+                Insurance, scope, pricing, scheduling,
                 permits, warranties, and the party responsible for each project
                 should be confirmed in writing before work begins.
               </p>
@@ -1011,7 +1010,7 @@ export default function Home() {
             {[
               {
                 title: "Verify the Contracting Party",
-                text: "Confirm the legal business name, qualifying license holder, and party responsible for the proposed work.",
+                text: "Confirm the contracting entity and party responsible for the proposed work.",
               },
               {
                 title: "Confirm Insurance & Permits",
@@ -1177,9 +1176,7 @@ export default function Home() {
                   fontSize: "0.95rem",
                 }}
               >
-                This non-production preview sends submissions only to a
-                controlled test sink. It does not contact MGM CONTRACTING or any
-                client recipient.
+                Submitting an inquiry opens your email application with the details addressed to info@mgmfla.com. Please review and send the email to contact MGM CONTRACTING INC.
               </p>
               <div
                 style={{
@@ -1528,9 +1525,7 @@ export default function Home() {
                   maxWidth: "300px",
                 }}
               >
-                MGM CONTRACTING INC project information. Public license reference{" "}
-                 is issued to Joseph Rene Dube / J.R.D. Enterprises
-                LLC.
+                MGM CONTRACTING INC. Contact us to discuss your project.
               </p>
             </div>
             <div>
@@ -1645,7 +1640,7 @@ export default function Home() {
             <span
               style={{ color: "rgba(255,255,255,0.28)", fontSize: "0.8rem" }}
             >
-              Florida entity record  &middot; License reference{" "}
+              MGM CONTRACTING INC
               
             </span>
           </div>
