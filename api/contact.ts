@@ -54,7 +54,7 @@ export default async function handler(
     process.env.FORM_DELIVERY_URL;
 
   if (!deliveryUrl) {
-    return sendJson(res, 503, { accepted: false, error: "Contact form delivery is not configured. Please email info@mgmfla.com." });
+    return sendJson(res, 503, { accepted: false, error: "Contact form delivery is not configured. Please email doug@mgmfla.com." });
   }
 
   let body: unknown;
