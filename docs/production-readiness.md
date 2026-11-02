@@ -28,3 +28,12 @@ The launch candidate removes or neutralizes the prior 50+ years claim, $32 milli
 ## Rollback
 
 The remediation work is isolated in Git history. To roll back the preview, redeploy the prior known commit `0665b7a830932a74d55ec5bdf4f32632004501fe` or delete/disable the non-production Vercel project. Do not change `mgmfla.com` DNS or its mail-related DNS records during preview work.
+
+
+## November 2, 2026 — confirmed owner corrections
+
+Doug's October 27/29 Gmail instructions were confirmed on the call by Nate and Doug. Applied office address 1121 PEACHTREE STREET, COCOA, FL. 32922 OFFICE; owner-supplied contractor licenses CGC 059589, CCC 1327481, CAC 1816183; changed MGM visible contact and mailto form recipient to doug@mgmfla.com. These license values are owner-supplied, not an independent DBPR verification.
+
+Evidence: source commits 9ff77701766f15f2e49931772c96548c0d31da78 and a99bde4b2433c8736c3fffdb43e3994fd7622778. Production deployment dpl_ACHsyXnBDfetT1n2zJ1EKCaivvyz returned READY and aliases mgmfla.com. Live asset /assets/index-Q7EmDNzt.js contains all three licenses, PEACHTREE and doug@mgmfla.com; info@mgmfla.com is absent. Form opens the visitor's email application; no email was sent and inbox receipt was not tested.
+
+Remaining cross-site work: DougABomb live asset /assets/index-CNCys0wL.js differs from the GitHub Home.tsx on both main and the deployment-reported release/dougabomb-preview-readiness source; locate the exact current editable source before redeploying to avoid reverting the live site. Doug Oliver Development returned HTTP 503 in one live check; hosting/edit access needs inspection. No GoDaddy/DNS changes made. TrashMax unchanged per owner instruction.
