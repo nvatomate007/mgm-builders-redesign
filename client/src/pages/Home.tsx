@@ -191,7 +191,7 @@ export default function Home() {
       "Service: " + formData.service,
       "Details: " + formData.details
     ].join("\n"));
-    window.location.href = "mailto:info@mgmfla.com?subject=" + subject + "&body=" + body;
+    window.location.href = "mailto:doug@mgmfla.com?subject=" + subject + "&body=" + body;
   };
 
   const labelStyle: React.CSSProperties = {
@@ -854,8 +854,8 @@ export default function Home() {
                   { icon: Phone, text: PHONE, href: `tel:${PHONE}` },
                   {
                     icon: Mail,
-                    text: "info@mgmfla.com",
-                    href: "mailto:info@mgmfla.com",
+                    text: "doug@mgmfla.com",
+                    href: "mailto:doug@mgmfla.com",
                   },
                 ].map(({ icon: Icon, text, href }) => (
                   <div
@@ -1174,7 +1174,7 @@ export default function Home() {
                   fontSize: "0.95rem",
                 }}
               >
-                Submitting an inquiry opens your email application with the details addressed to info@mgmfla.com. Please review and send the email to contact MGM CONTRACTING INC.
+                Submitting an inquiry opens your email application with the details addressed to doug@mgmfla.com. Please review and send the email to contact MGM CONTRACTING INC.
               </p>
               <div
                 style={{
@@ -1193,8 +1193,8 @@ export default function Home() {
                   {
                     icon: Mail,
                     label: "Email",
-                    value: "info@mgmfla.com",
-                    href: "mailto:info@mgmfla.com",
+                    value: "doug@mgmfla.com",
+                    href: "mailto:doug@mgmfla.com",
                   },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <div
@@ -1464,8 +1464,7 @@ export default function Home() {
                     />
                     <span>
                       I consent to being contacted about this project inquiry.
-                      This preview currently routes only to a non-client test
-                      sink.
+                      Your email application will open so you can send your inquiry to doug@mgmfla.com.
                     </span>
                   </label>
                   <button
@@ -1523,7 +1522,11 @@ export default function Home() {
                   maxWidth: "300px",
                 }}
               >
-                MGM CONTRACTING INC. Contact us to discuss your project.
+                MGM CONTRACTING INC<br />
+                1121 PEACHTREE STREET, COCOA, FL. 32922 OFFICE<br />
+                Certified General Contractor License #CGC 059589<br />
+                Certified Roofing Contractor License #CCC 1327481<br />
+                Certified Air Conditioning Contractor License #CAC 1816183
               </p>
             </div>
             <div>
@@ -1606,14 +1609,14 @@ export default function Home() {
                   {PHONE}
                 </a>
                 <a
-                  href="mailto:info@mgmfla.com"
+                  href="mailto:doug@mgmfla.com"
                   style={{
                     color: "rgba(255,255,255,0.55)",
                     fontSize: "0.88rem",
                     textDecoration: "none",
                   }}
                 >
-                  info@mgmfla.com
+                  doug@mgmfla.com
                 </a>
               </div>
             </div>
